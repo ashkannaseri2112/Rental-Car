@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Car</title>
+    <link rel="stylesheet" href="/public/styles/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="/public/img/Vector.svg"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="font-Lato overflow-x-hidden">
+    <svg class="hidden">
+      <symbol
+        id="envlope"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+        />
+      </symbol>
+      <symbol
+        id="phone"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+        />
+      </symbol>
+      <symbol
+        id="clock"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </symbol>
+      <symbol
+        id="map_outline"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+        />
+      </symbol>
+      <symbol
+        id="map"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+      <symbol
+        id="chevron-right"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </symbol>
+      <symbol
+        id="closeNav"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        id="menuIcon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
+        />
+      </symbol>
+      <symbol
+        id="agentIcon"
+        width="85"
+        height="86"
+        viewBox="0 0 85 86"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_8_100)">
+          <path
+            d="M49.4314 84.387C50.4044 80.8572 51.3773 77.3275 52.3503 73.7977C54.4472 66.1401 56.5629 58.4875 58.6105 50.8171C58.965 49.4894 59.5192 49.1528 60.835 49.6739C65.7905 51.6365 70.8038 53.464 75.7244 55.5049C77.4355 56.2146 79.0139 57.2975 80.5235 58.3821C82.3085 59.6648 83.0735 61.5093 83.2639 63.6844C83.7586 69.2944 84.3553 74.8959 84.9444 80.4974C85.2844 83.7521 83.802 85.407 80.3816 85.4087C63.0983 85.4178 45.8149 85.4178 28.5316 85.4087C20.5983 85.4087 12.6649 85.4087 4.73159 85.4087C1.30949 85.4087 -0.278311 83.8983 0.0200394 80.5909C0.567439 74.5236 1.16244 68.4563 1.96059 62.4171C2.12549 61.1727 3.01034 59.7498 4.01419 58.938C5.85019 57.4624 7.90124 56.1262 10.0687 55.1827C14.5202 53.2507 19.1085 51.6127 23.6432 49.8668C25.5761 49.1214 25.9306 49.3092 26.4797 51.3186C29.4235 62.0898 32.3674 72.8607 35.3112 83.6314C35.3869 83.9722 35.5834 84.2742 35.8645 84.4814C36.2088 81.8523 36.5607 79.2241 36.8964 76.5942C37.6036 71.0582 38.3304 65.5247 38.9789 59.9818C39.0886 59.0468 38.933 58.0549 38.7469 57.1182C38.5012 55.8772 38.1043 54.6642 37.7405 53.3195H47.2732C47.2061 53.691 47.2103 54.0505 47.076 54.3514C45.4321 58.0447 46.334 61.8059 46.7675 65.5442C47.4568 71.4942 48.1989 77.4442 48.9273 83.3866C48.9681 83.7198 49.088 84.0428 49.1713 84.3709L49.4314 84.387Z"
+            fill="white"
+          />
+          <path
+            d="M51.1042 40.9112C44.2872 47.3058 42.503 47.7495 35.3375 41.8335C26.2807 34.3535 19.961 19.9885 26.0419 10.097C29.9468 3.74585 35.7098 0.0389988 43.4618 0.437649C51.5368 0.852449 56.8986 5.39825 60.2782 12.3376C63.7182 19.6978 58.9879 33.5349 51.1042 40.9112Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_8_100">
+            <rect
+              width="85"
+              height="85"
+              fill="white"
+              transform="translate(-0.00976562 0.366211)"
+            />
+          </clipPath>
+        </defs>
+      </symbol>
+      <symbol
+        id="keyIcon"
+        width="107"
+        height="107"
+        viewBox="0 0 107 107"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_8_92)">
+          <path
+            d="M74.6018 21.3015C75.1746 22.3441 75.2186 23.4721 75.2165 24.6303C75.1995 32.9997 75.1948 41.3688 75.2022 49.7378C75.1969 54.2848 72.6937 57.942 68.5497 59.3134C67.4594 59.6623 66.3217 59.8409 65.1768 59.8427C57.515 59.8883 49.8536 59.8945 42.1928 59.8612C36.4377 59.8464 32.1972 55.6377 32.1765 49.8841C32.145 41.1722 32.1503 32.461 32.1924 23.7505C32.1961 22.9333 32.5727 22.1155 32.7715 21.3015L33.7033 20.3697C34.7481 19.798 35.874 19.7571 37.0311 19.7593C48.1341 19.7748 59.2369 19.7761 70.3396 19.763C71.4968 19.7619 72.6264 19.799 73.669 20.3707L74.6018 21.3015ZM65.1742 37.2702C66.3027 36.2478 66.9937 34.5703 67.0139 32.7301C67.0316 31.1447 67.0328 29.5592 67.0176 27.9735C67.0027 26.3762 66.1118 25.4852 64.5091 25.4852C57.2903 25.4768 50.0702 25.4769 42.8489 25.4858C41.2542 25.4895 40.3685 26.3836 40.3553 27.9889C40.3422 29.5499 40.3431 31.111 40.3579 32.6723C40.4014 36.4122 42.9316 38.9646 46.6688 38.9832C51.3516 39.0097 56.0355 38.9906 60.7189 38.989C62.4244 38.989 63.9252 38.4598 65.1742 37.2702Z"
+            fill="white"
+          />
+          <path
+            d="M49.8062 102.573C49.1672 101.443 48.4624 100.346 47.8923 99.1836C46.6492 96.6497 46.0812 93.9657 46.0923 91.1258C46.1178 83.3087 46.0165 68.6255 45.9486 63.6669C45.9457 63.4468 45.9866 63.2284 46.0688 63.0243C46.151 62.8202 46.2729 62.6344 46.4275 62.4777C46.582 62.3211 46.7662 62.1967 46.9692 62.1118C47.1722 62.0269 47.3901 61.9831 47.6102 61.9831L59.6057 61.9826C60.0453 61.9823 60.467 62.1564 60.7786 62.4665C61.0901 62.7766 61.266 63.1976 61.2677 63.6372C61.2799 66.195 61.263 71.0973 61.2778 73.7501C61.2831 74.6357 61.0211 75.3506 60.3789 75.9727C59.6582 76.6711 58.9481 77.3791 58.2199 78.1104C57.721 78.6122 57.4398 79.2903 57.4374 79.9979C57.435 80.7055 57.7116 81.3856 58.2072 81.8906L58.2252 81.9087C59.0457 82.745 59.8358 83.6115 60.6828 84.4192C61.1627 84.8769 61.1802 85.2105 60.704 85.6846C59.4789 86.9097 58.2889 88.1687 57.0882 89.4181L57.0818 89.4245C56.9038 89.6098 56.8007 89.8545 56.7924 90.1114C56.7841 90.3682 56.8711 90.6191 57.0368 90.8155C57.5756 91.4551 58.1033 92.0825 58.6421 92.7104C59.1809 93.3383 59.7261 93.9662 60.2861 94.5782C60.7226 95.055 60.8329 95.562 60.6393 96.1904C59.9594 98.3945 59.0748 100.491 57.6323 102.319C57.5832 102.401 57.5451 102.49 57.5188 102.582L56.2763 103.825C56.0922 103.935 55.9066 104.044 55.7237 104.158C54.4716 104.93 53.1993 105.018 51.8973 104.284C51.673 104.158 51.4365 104.05 51.2106 103.931L49.8062 102.573Z"
+            fill="white"
+          />
+          <path
+            d="M51.2042 103.924C51.4317 104.046 51.6704 104.156 51.8974 104.284C53.1999 105.018 54.4721 104.931 55.7232 104.156C55.9061 104.043 56.0912 103.934 56.2758 103.823L53.6893 106.409C52.861 105.581 52.0326 104.753 51.2042 103.924Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_8_92">
+            <rect
+              width="75"
+              height="75"
+              fill="white"
+              transform="translate(0.467041 53.3992) rotate(-45)"
+            />
+          </clipPath>
+        </defs>
+      </symbol>
+      <symbol
+        id="trip"
+        width="100"
+        height="126"
+        viewBox="0 0 125 126"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M58.825 28.7412H53.9388C53.6892 28.7411 53.4437 28.8042 53.2251 28.9246C53.0065 29.0451 52.822 29.2189 52.6888 29.43L3.52875 107.277C2 109.704 3.74 112.866 6.60875 112.866H38.92C39.7557 112.866 40.5661 112.579 41.2152 112.053C41.8643 111.526 42.3126 110.793 42.485 109.975L59.46 29.5237C59.4799 29.4292 59.4785 29.3315 59.4558 29.2376C59.4331 29.1438 59.3898 29.0561 59.3289 28.9812C59.2681 28.9062 59.1913 28.8457 59.1041 28.8042C59.0169 28.7627 58.9216 28.7412 58.825 28.7412Z"
+          fill="white"
+        />
+        <path
+          d="M70.4425 28.7412H66.27C66.1597 28.7406 66.0505 28.7641 65.9502 28.8102C65.8499 28.8562 65.7609 28.9236 65.6894 29.0077C65.6179 29.0918 65.5657 29.1905 65.5365 29.297C65.5072 29.4034 65.5016 29.5149 65.52 29.6237L79.1513 110.099C79.2825 110.874 79.6842 111.577 80.285 112.083C80.8857 112.59 81.6466 112.868 82.4325 112.866H118.933C119.529 112.866 120.114 112.706 120.626 112.402C121.139 112.098 121.561 111.661 121.847 111.138C122.133 110.615 122.273 110.025 122.252 109.429C122.232 108.834 122.051 108.254 121.73 107.752L71.4938 29.3162C71.3807 29.14 71.2252 28.995 71.0415 28.8946C70.8578 28.7941 70.6519 28.7414 70.4425 28.7412Z"
+          fill="white"
+        />
+        <path
+          d="M62.6925 28.7412H61.9625L58.375 110.011C58.3586 110.38 58.4172 110.749 58.5471 111.094C58.6771 111.44 58.8757 111.756 59.1311 112.023C59.3865 112.289 59.6933 112.502 60.0329 112.647C60.3726 112.792 60.7382 112.866 61.1075 112.866H63.0363C63.4041 112.866 63.7681 112.792 64.1066 112.648C64.445 112.504 64.751 112.294 65.0061 112.029C65.2612 111.764 65.4603 111.45 65.5913 111.106C65.7224 110.763 65.7827 110.396 65.7688 110.029L62.6925 28.7412Z"
+          fill="white"
+        />
+      </symbol>
+      <symbol
+        id="carSaftey"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M61.25 11.25C60.625 10.625 59.6875 10.3125 58.75 10.625C51.875 12.1875 45 10.625 39.375 6.5625C38.4375 5.9375 36.875 5.9375 35.9375 6.5625C30 10.625 23.125 12.1875 16.25 10.625C14.6875 10.3125 12.8125 11.5625 12.5 13.125C12.5 13.4375 12.5 13.4375 12.5 13.75V37.1875C12.5 46.25 16.875 54.6875 24.375 60L35.9375 68.125C36.875 68.75 38.4375 68.75 39.6875 68.125L51.25 60C58.75 54.6875 63.125 46.25 63.125 37.1875V13.75C62.5 12.8125 62.1875 11.875 61.25 11.25ZM43.75 40.625H40.625V43.75C40.625 45.625 39.375 46.875 37.5 46.875C35.625 46.875 34.375 45.625 34.375 43.75V40.625H31.25C29.375 40.625 28.125 39.375 28.125 37.5C28.125 35.625 29.375 34.375 31.25 34.375H34.375V31.25C34.375 29.375 35.625 28.125 37.5 28.125C39.375 28.125 40.625 29.375 40.625 31.25V34.375H43.75C45.625 34.375 46.875 35.625 46.875 37.5C46.875 39.375 45.625 40.625 43.75 40.625Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="liveMonitoring"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M50 21.875H18.75C16.875 21.875 15.625 23.125 15.625 25V32.8125H39.0625C40.9375 32.8125 42.1875 34.0625 42.1875 35.9375V59.375H50C51.875 59.375 53.125 58.125 53.125 56.25V25C53.125 23.125 51.875 21.875 50 21.875ZM34.375 37.5H9.375C7.5 37.5 6.25 38.75 6.25 40.625V65.625C6.25 67.5 7.5 68.75 9.375 68.75H34.375C36.25 68.75 37.5 67.5 37.5 65.625V40.625C37.5 38.75 36.25 37.5 34.375 37.5ZM65.625 6.25H28.125C26.25 6.25 25 7.5 25 9.375V17.1875H54.6875C56.5625 17.1875 57.8125 18.4375 57.8125 20.3125V50H65.625C67.5 50 68.75 48.75 68.75 46.875V9.375C68.75 7.5 67.5 6.25 65.625 6.25Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="premium"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M65.625 6.25H9.375C7.5 6.25 6.25 7.5 6.25 9.375V65.625C6.25 67.5 7.5 68.75 9.375 68.75H65.625C67.5 68.75 68.75 67.5 68.75 65.625V9.375C68.75 7.5 67.5 6.25 65.625 6.25ZM55.3125 29.0625L34.0625 50.3125C32.8125 51.5625 30.9375 51.5625 29.6875 50.3125L19.6875 40.3125C18.4375 39.0625 18.4375 37.1875 19.6875 35.9375C20.9375 34.6875 22.8125 34.6875 24.0625 35.9375L31.875 43.75L50.9375 24.6875C52.1875 23.4375 54.0625 23.4375 55.3125 24.6875C56.5625 25.9375 56.5625 27.8125 55.3125 29.0625Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="prfessional"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M49.6875 41.25C49.375 41.25 49.375 40.9375 49.0625 40.9375C53.75 37.5 56.25 32.1875 56.25 26.25C56.25 25.625 56.25 25 56.25 24.375V24.0625L57.1875 16.5625C57.8125 11.5625 54.375 7.1875 49.6875 6.25L46.875 5.625C40.625 4.6875 34.375 4.6875 28.125 5.625L25.625 6.25C20.625 7.1875 17.1875 11.5625 17.8125 16.5625L18.75 24.0625V24.375C18.75 25 18.75 25.625 18.75 26.25C18.75 31.875 21.25 37.5 25.9375 40.9375C25.625 40.9375 25.625 41.25 25.3125 41.25C15 45.625 7.81251 55.3125 6.56251 66.5625C6.25001 68.125 7.50001 69.6875 9.37501 70C11.25 70.3125 64.0625 70 65.625 70H65.9375C67.5 69.6875 68.75 68.125 68.75 66.5625C67.1875 55.3125 60 45.625 49.6875 41.25ZM37.5 50.9375L32.1875 45.625C35.625 45 39.0625 45 42.5 45.625L37.5 50.9375ZM37.5 38.75C30.625 38.75 25.3125 33.4375 25 26.5625H50C49.6875 33.4375 44.375 38.75 37.5 38.75Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="refund"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M65.625 34.375H9.375C7.5 34.375 6.25 35.625 6.25 37.5C6.25 39.375 7.5 40.625 9.375 40.625H65.625C67.5 40.625 68.75 39.375 68.75 37.5C68.75 35.625 67.5 34.375 65.625 34.375ZM53.125 46.875H21.875C20.9375 46.875 20.3125 47.1875 19.6875 47.8125C18.4375 49.0625 18.4375 50.9375 19.6875 52.1875L35.3125 67.8125C35.9375 68.4375 36.5625 68.75 37.5 68.75C38.4375 68.75 39.0625 68.4375 39.6875 67.8125L55.3125 52.1875C55.9375 51.5625 56.25 50.9375 56.25 50C56.25 48.125 55 46.875 53.125 46.875ZM48.125 25C48.125 26.875 49.375 28.125 51.25 28.125H53.125C54.0625 28.125 54.6875 27.8125 55.3125 27.1875C56.5625 25.9375 56.5625 24.0625 55.3125 22.8125L53.125 20.625C52.1875 19.6875 50.625 19.375 49.375 20C47.8125 20.625 47.1875 22.5 48.125 24.0625C48.125 24.6875 48.125 24.6875 48.125 25ZM36.25 15L37.5 13.75L40 16.25C40.625 16.875 41.25 17.1875 42.1875 17.1875C43.125 17.1875 43.75 16.875 44.375 16.25C45.625 15 45.625 13.125 44.375 11.875L40.9375 8.4375C40.625 8.125 40.3125 8.125 40 7.8125C40 7.5 39.6875 7.1875 39.375 6.875C38.125 5.625 36.25 5.625 35 6.875L31.5625 10.3125C30.3125 11.5625 30.3125 13.4375 31.5625 14.6875C32.8125 15.9375 35.3125 16.25 36.25 15ZM22.1875 28.125C23.125 28.125 23.75 27.8125 24.375 27.1875L27.8125 23.75C29.0625 22.5 29.0625 20.625 27.8125 19.375C26.5625 18.125 24.6875 18.125 23.4375 19.375L19.6875 22.5C19.375 23.125 19.0625 24.0625 19.0625 24.6875C19.0625 26.5625 20.3125 27.8125 22.1875 28.125ZM34.0625 28.125H38.75C40.625 28.125 41.875 26.875 41.875 25C41.875 23.125 40.625 21.875 38.75 21.875H34.0625C32.1875 21.875 30.9375 23.125 30.9375 25C30.9375 26.875 32.5 28.125 34.0625 28.125Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="solidIcon"
+        width="75"
+        height="75"
+        viewBox="0 0 75 75"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M70.625 6.56256C70.3125 5.62506 69.375 4.68756 68.4375 4.37506C55.3125 0.937558 41.875 5.00006 32.8125 15.6251L29.375 19.6876L20.9375 17.8126C16.875 16.2501 12.5 18.1251 10.625 21.8751L3.75 34.0626C3.125 35.0001 3.125 35.9376 3.75 36.8751C4.0625 37.8126 5 38.4376 5.9375 38.7501L15.625 40.9376C14.6875 43.4376 14.375 45.9376 13.75 48.4376C13.75 49.3751 14.0625 50.3126 14.6875 50.9376L24.375 60.6251C25 61.2501 25.625 61.5626 26.5625 61.5626H26.875C29.6875 61.2501 32.1875 60.9376 34.6875 60.0001L36.5625 69.3751C36.875 70.3126 37.5 71.2501 38.4375 71.5626C38.75 71.8751 39.375 71.8751 39.6875 71.8751C40.3125 71.8751 40.625 71.8751 41.25 71.5626L53.4375 64.6876C56.875 62.8126 58.75 58.4376 57.8125 54.3751L55.625 45.6251L59.375 42.1876C69.6875 33.4376 74.0625 19.3751 70.625 6.56256ZM22.8125 27.5001C20.9375 30.0001 19.0625 32.5001 17.8125 35.0001L11.25 33.4376L15.9375 25.0001C16.5625 23.7501 17.8125 23.4376 19.375 23.7501L24.6875 25.0001L22.8125 27.5001ZM50 59.0626L41.5625 63.7501L40.3125 57.5001C43.125 56.2501 45.625 54.375 47.8125 52.5001L50 50.3126L51.25 55.625C51.875 57.1875 50.9375 58.7501 50 59.0626ZM52.1875 27.5001C49.6875 27.5001 47.5 25.3126 47.5 22.8126C47.5 20.3126 49.6875 18.1251 52.1875 18.1251C54.6875 18.1251 56.875 20.3126 56.875 22.8126C56.875 25.3126 55 27.5001 52.1875 27.5001Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="instagram"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        class="bi bi-instagram"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+        />
+      </symbol>
+      <symbol
+        id="linkdin"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="22"
+        height="22"
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"
+        ></path>
+      </symbol>
+      <symbol
+        id="twitter"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        x="0px"
+        y="0px"
+        width="26"
+        height="26"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 50.0625 10.4375 C 48.214844 11.257813 46.234375 11.808594 44.152344 12.058594 C 46.277344 10.785156 47.910156 8.769531 48.675781 6.371094 C 46.691406 7.546875 44.484375 8.402344 42.144531 8.863281 C 40.269531 6.863281 37.597656 5.617188 34.640625 5.617188 C 28.960938 5.617188 24.355469 10.21875 24.355469 15.898438 C 24.355469 16.703125 24.449219 17.488281 24.625 18.242188 C 16.078125 17.8125 8.503906 13.71875 3.429688 7.496094 C 2.542969 9.019531 2.039063 10.785156 2.039063 12.667969 C 2.039063 16.234375 3.851563 19.382813 6.613281 21.230469 C 4.925781 21.175781 3.339844 20.710938 1.953125 19.941406 C 1.953125 19.984375 1.953125 20.027344 1.953125 20.070313 C 1.953125 25.054688 5.5 29.207031 10.199219 30.15625 C 9.339844 30.390625 8.429688 30.515625 7.492188 30.515625 C 6.828125 30.515625 6.183594 30.453125 5.554688 30.328125 C 6.867188 34.410156 10.664063 37.390625 15.160156 37.472656 C 11.644531 40.230469 7.210938 41.871094 2.390625 41.871094 C 1.558594 41.871094 0.742188 41.824219 -0.0585938 41.726563 C 4.488281 44.648438 9.894531 46.347656 15.703125 46.347656 C 34.617188 46.347656 44.960938 30.679688 44.960938 17.09375 C 44.960938 16.648438 44.949219 16.199219 44.933594 15.761719 C 46.941406 14.3125 48.683594 12.5 50.0625 10.4375 Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="facebook"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        x="0px"
+        y="0px"
+        width="22"
+        height="22"
+        viewBox="0 0 30 30"
+      >
+        <path
+          d="M12,27V15H8v-4h4V8.852C12,4.785,13.981,3,17.361,3c1.619,0,2.475,0.12,2.88,0.175V7h-2.305C16.501,7,16,7.757,16,9.291V11 h4.205l-0.571,4H16v12H12z"
+        ></path>
+      </symbol>
+      <symbol
+        id="frame"
+        width="46"
+        height="40"
+        viewBox="0 0 46 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="10.5" y="10" width="10" height="10" fill="#F55757" />
+        <path
+          d="M20.5 30C14.2391 30 10.9348 27.3913 10.5 20H16.587C15.7174 27.3913 18.9058 28.4058 20.5 29.1304V30Z"
+          fill="#F55757"
+        />
+        <rect x="25.5" y="10" width="10" height="10" fill="#F55757" />
+        <path
+          d="M35.5 30C29.2391 30 25.9348 27.3913 25.5 20H31.587C30.7174 27.3913 33.9058 28.4058 35.5 29.1304V30Z"
+          fill="#F55757"
+        />
+      </symbol>
+      <symbol
+        id="star"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+    </svg>
+    <header>
+      <div class="container">
+        <div class="flex justify-between mt-8 items-center">
+          <img src="/public/img/Frame 332.png" alt="Icon Img" />
+          <ul class="capitalize hidden md:flex gap-x-8 lg:gap-x-14 font-Lato">
+            <li><a class="hover:text-red-450" href="#">about</a></li>
+            <li><a class="hover:text-red-450" href="#">car</a></li>
+            <li><a class="hover:text-red-450" href="#">become partner</a></li>
+            <li>
+              <a class="hover:text-red-450" href="#">Terms& Conditions</a>
+            </li>
+            <li><a class="hover:text-red-450" href="#">Contact Us</a></li>
+          </ul>
+          <svg id="openMenuBtn" class="text-red-450 w-7 h-7 block md:hidden">
+            <use href="#menuIcon"></use>
+          </svg>
+          <div
+            id="navMenu"
+            class="-right-52 nav-hidden w-52 h-full top-0 fixed z-20 bg-red-450 transition-all md:hidden"
+          >
+            <div class="relative">
+              <svg
+                id="closeMenuBtn"
+                class="text-white absolute right-0 w-7 h-7 m-4"
+              >
+                <use href="#closeNav"></use>
+              </svg>
+            </div>
+            <ul
+              class="capitalize px-5 flex flex-col gap-y-4 child:text-white pt-24"
+            >
+              <li class="relative active menu-item"><a href="#">About</a></li>
+              <li class="relative active menu-item"><a href="#">Car</a></li>
+              <li class="relative active menu-item">
+                <a href="#">Become Partner</a>
+              </li>
+              <li class="relative active menu-item">
+                <a href="#">Terms & Conditions</a>
+              </li>
+              <li class="relative active menu-item">
+                <a href="#">Contact Us</a>
+              </li>
+            </ul>
+            <div
+              class="flex justify-center items-center flex-col mt-10 gap-6 child:p-2"
+            >
+              <a
+                class="border transition-colors bg-white text-red-450 hover:bg-red-450 hover:text-white"
+                href="#"
+                >Get in Touch</a
+              >
+              <a
+                class="border transition-colors bg-white text-red-450 hover:bg-red-450 hover:text-white"
+                href="#"
+                >Our Car</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Section Home -->
+      <section class="section-home mt-20 md:mt-36">
+        <div class="flex-col lg:flex-row items-center justify-between relative">
+          <div class="container">
+            <div class="max-w-[600px]">
+              <h1
+                class="font-LatoBold text-4xl sm:text-[56px] leading-[63px] line-clamp-2"
+              >
+                We Have Prepared a Car For Your Trip
+              </h1>
+              <h4 class="font-LatoLight mt-5 text-base md:text-xl">
+                We have many types of cars that are ready for you to travel
+                anywhere and anytime.
+              </h4>
+              <div
+                class="hidden md:flex mt-14 gap-x-7 child:flex-center child-hover:bg-red-450 child-hover:text-white"
+              >
+                <a
+                  class="px-8 py-5 text-red-450 text-xl rounded-sm border-[2.5px] border-red-450 transition-colors"
+                  href="#"
+                  >Get in Touch</a
+                >
+                <a
+                  class="px-8 py-5 text-red-450 text-xl rounded-sm border-[2.5px] border-red-450 transition-colors"
+                  href="#"
+                  >Our Car</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-8 overflow-hidden lg:mt-0 bg-home-bg__mobile sm:bg-home-bg lg:absolute right-0 top-0 bg-no-repeat md:w-[790px] h-[300px] lg:h-[900px]"
+          >
+            <img
+              class="mt-40 sm:w-[400px] md:w-[500px] absolute hidden md:block -right-16 top-20 sm:top-auto md:right-0 xl:w-full"
+              src="/public/img/Toyota Camry Home 1.png"
+              alt="Toyota camery"
+            />
+            <img
+              class="absolute max-w-[300px] right-0 md:hidden"
+              src="/public/img/Toyota Camry Home 1 Mobile.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Section Cover-->
+      <section class="section-cover bg-red-200 w-full py-12 mt-32 lg:mt-72">
+        <div class="container">
+          <div id="allBtnFeature" class="flex child:bg-white">
+            <button
+              data-type="instantRent"
+              class="mainBtnFeature font-LatoBold text-[#A6A6A6] p-3"
+              href="#"
+            >
+              Instant Rent
+            </button>
+            <button
+              data-type="privateDriver"
+              class="font-LatoBold text-[#A6A6A6] p-3"
+              href="#"
+            >
+              Private Driver
+            </button>
+            <button
+              data-type="longTrip"
+              class="font-LatoBold text-[#A6A6A6] p-3"
+              href="#"
+            >
+              Long Trip
+            </button>
+          </div>
+          <div class="w-full bg-white p-7 md:p-12">
+            <div id="contentContainer"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Section Brands -->
+      <section class="mt-24 section-Brands">
+        <div class="container">
+          <div
+            id="brandsContainer"
+            class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-y-6 mb-12"
+          ></div>
+        </div>
+      </section>
+      <!-- Section Popular Car -->
+      <section class="section-Popular mt-32">
+        <div class="container">
+          <div class="sections_header">
+            <h4>popular Car</h4>
+            <h2>Choose Your Suitable Car</h2>
+            <span>
+              We present popular cars that are rented by customers to maximize
+              your comfort on long trips.
+            </span>
+          </div>
+          <!-- باکس ماشینها container  -->
+          <div
+            id="carBoxesGroup"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-16 child:max-w-[400px]"
+          ></div>
+          <div class="flex-center">
+            <a
+              href="#"
+              class="my-16 flex-center text-red-450 border-[3px] transition-colors rounded-sm border-red-450 hover:bg-red-450 hover:text-white w-[116px] h-[48px] font-LatoBold"
+            >
+              See All
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Section Our Services -->
+      <section class="section-Services w-full pb-28 mb-24">
+        <div class="container">
+          <div class="sections_header py-12">
+            <h4>services</h4>
+            <h2>Our Services</h2>
+            <span
+              >Our service is not only renting a car, but we also provide a
+              private chauffeur service that can guide you on your trip and also
+              longtrip packages to support your travel needs.</span
+            >
+          </div>
+          <div
+            id="servicesContainer"
+            class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 child:mx-auto gap-10"
+          ></div>
+        </div>
+      </section>
+      <!-- Section Advntages -->
+      <section class="section-Adventages">
+        <div class="container">
+          <div class="sections_header">
+            <h4>Advantages</h4>
+            <h2>Why Choose Us ?</h2>
+            <span
+              >We present many guarantees and advantages when you rent a car
+              with us for your trip. Here are some of the advantages that you
+              will get</span
+            >
+          </div>
+          <div
+            id="adventage-Group"
+            class="mt-24 grid child:mx-auto md:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-16"
+          ></div>
+        </div>
+      </section>
+      <!-- Section ContactUs -->
+      <section class="section-ContactUs mt-28">
+        <div class="container">
+          <div
+            class="flex flex-col-reverse md:flex-row justify-between gap-y-10 items-center"
+          >
+            <div class="max-w-[470px]">
+              <div class="sections_header text-center md:text-left">
+                <h4>Get In Touch</h4>
+                <h2 class="py-3">Contact Us</h2>
+                <span>
+                  if you need consultation with us, you can write a message or
+                  call us, we will respond as quickly as possible</span
+                >
+              </div>
+              <div id="contactUsBox" class="mt-12 flex flex-col gap-y-8">
+                <div class="flex items-center gap-x-4 md:gap-x-7">
+                  <svg class="h-8 w-8 text-red-450">
+                    <use href="#envlope"></use>
+                  </svg>
+                  <span
+                    class="text-sm md:text-base text-[#808080] font-Montserrat"
+                    >lorenna@gmail.com</span
+                  >
+                </div>
+                <div class="flex items-center gap-x-4 md:gap-x-7">
+                  <svg class="h-8 w-8 text-red-450">
+                    <use href="#phone"></use>
+                  </svg>
+                  <span
+                    class="text-sm md:text-base text-[#808080] font-Montserrat"
+                    >+62 8221 1222 0001</span
+                  >
+                </div>
+                <div class="flex items-center gap-x-4 md:gap-x-7">
+                  <svg class="h-8 w-8 text-red-450">
+                    <use href="#clock"></use>
+                  </svg>
+                  <span
+                    class="text-sm md:text-base text-[#808080] font-Montserrat"
+                    >Everyday : 08.00-21.00</span
+                  >
+                </div>
+                <div class="flex items-center gap-x-4 md:gap-x-7">
+                  <svg class="h-8 w-8 text-red-450">
+                    <use href="#map_outline"></use>
+                  </svg>
+                  <span
+                    class="text-sm md:text-base text-[#808080] font-Montserrat"
+                    >Jl. Raya Cihaluan No.112 Tangerang Selatan, Indonesia
+                    41222</span
+                  >
+                </div>
+              </div>
+              <ul class="socials"></ul>
+            </div>
+            <div class="flex flex-col">
+              <img src="/public/img/Contact-Us/Mask group.png" alt="mask" />
+              <a
+                href="#"
+                class="mx-auto md:ml-7 mt-8 flex-center text-red-450 border-[3px] w-[195px] h-[58px] transition-colors rounded-sm border-red-450 hover:bg-red-450 hover:text-white font-LatoBold"
+              >
+                Office Center Map
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section Our-Review -->
+      <section class="section-ourReview mt-28">
+        <div class="container">
+          <div class="sections_header">
+            <h4>Our review</h4>
+            <h2>What They Say ?</h2>
+            <span>
+              Here are some comments from our customers, be one of them</span
+            >
+          </div>
+          <div
+            id="reviewsGroup"
+            class="mt-20 bg-red-450/5 p-10 relative overflow-hidden"
+          ></div>
+          <a
+            href="#"
+            class="my-16 flex-center mx-auto text-red-450 border-[3px] transition-colors rounded-sm border-red-450 hover:bg-red-450 hover:text-white w-[116px] h-[48px] font-LatoBold"
+          >
+            See All
+          </a>
+        </div>
+      </section>
+      <!-- Our-News -->
+      <section class="our-news bg-[#FEE7E7] w-full py-16">
+        <div class="container">
+          <div class="flex-center flex-col">
+            <h2
+              class="text-[33px] uppercase text-2xl font-LatoBold text-[#737373]"
+            >
+              subscribe our news
+            </h2>
+            <span class="font-LatoRegular text-[#A6A6A6] mt-4">
+              We can help you provide the latest news whenever and wherever you
+              are via email</span
+            >
+            <div class="mt-14 flex items-center gap-3 flex-wrap">
+              <div class="bg-white flex-center gap-x-2 ps-20 pe-5 relative">
+                <svg class="text-[#D9D9D9] absolute left-[40px] w-7 h-7">
+                  <use href="#envlope"></use>
+                </svg>
+                <input
+                  type="text"
+                  class="bg-white w-[250px] sm:w-[350px] md:w-[460px] h-[54px] focus:outline-none placeholder:text-[#D9D9D9]"
+                  placeholder="example@gmail.com"
+                />
+              </div>
+              <a
+                href="#"
+                class="flex-center text-red-450 border-[3px] transition-colors rounded-sm border-red-450 hover:bg-red-450 hover:text-white w-[116px] h-[54px] font-LatoBold"
+              >
+                Subscribe
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="mt-32">
+      <div class="container">
+        <div class="flex items-start justify-around md:justify-between flex-wrap gap-x-8 gap-y-20">
+          <div>
+            <img src="/public/img/Frame 332.png" alt="Icon" class="mb-7" />
+            <p class="text-[15px] text-[#A6A6A6] max-w-[380px]">
+              We are a well-known car rental service that has many partners in
+              each region to connect with you to assist in your trip in
+              meetings, events, holidays or long trips.
+            </p>
+            <ul class="socials mt-14"></ul>
+          </div>
+          <div>
+            <h3 class="font-MontserratBold text-[#737373] capitalize mb-6">
+              company
+            </h3>
+            <ul
+              class="child:capitalize child:text-[#A6A6A6] child:font-MontserratRegular flex flex-col gap-y-3"
+            >
+              <li><a class="footer-list relative" href="#">About Us</a></li>
+              <li><a class="footer-list relative" href="#">Services</a></li>
+              <li><a class="footer-list relative" href="#">Cars</a></li>
+              <li><a class="footer-list relative" href="#">Our Partner</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-MontserratBold text-[#737373] capitalize mb-6">
+              Services
+            </h3>
+            <ul
+              class="child:capitalize child:text-[#A6A6A6] child:font-MontserratRegular flex flex-col gap-y-3"
+            >
+              <li><a class="footer-list relative" href="#">instant Rent</a></li>
+              <li><a class="footer-list relative" href="#">private Driver</a></li>
+              <li><a class="footer-list relative" href="#">Long Trip</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-MontserratBold text-[#737373] capitalize mb-6">
+              Support
+            </h3>
+            <ul
+            class="child:capitalize child:text-[#A6A6A6] child:font-MontserratRegular flex flex-col gap-y-3"
+          >
+            <li><a class="footer-list relative" href="#">blog</a></li>
+            <li><a class="footer-list relative " href="#">FAQ</a></li>
+            <li><a class="footer-list relative " href="#">Call Center</a></li>
+            <li><a class="footer-list relative " href="#">Partner With Us</a></li>r
+            <li><a class="footer-list relative " href="#">Terms & Condition</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-[25px] bg-red-450 mt-32"></div>
+    </footer>
+    <div
+      class="w-full h-full fixed bg-black/40 top-0 hidden md:hidden"
+      id="overlay"
+    ></div>
+    <script src="/public/scripts/script.js"></script>
+  </body>
+</html>
