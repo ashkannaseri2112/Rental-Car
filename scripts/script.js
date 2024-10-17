@@ -66,7 +66,7 @@ const carsBoxArray = [
     price: "$132",
     type: "Clutch",
     location: "Bali",
-    img: "./img/Popular-car/Jaguar_F-Pace.png",
+    img: "img/Popular-car/Jaguar_F-Pace.png",
     mobimg: "./img/Popular-car/Jaguar F-Pace_mob.png",
   },
   {
