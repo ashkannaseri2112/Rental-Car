@@ -40,14 +40,14 @@ const dataMap = {
 };
 
 const brandsImg = [
-  { id: 1, name: "BWM_img", img: "/public/img/Brands/BMW.png" },
-  { id: 2, name: "lexus-log_img", img: "/public/img/Brands/lexus-logo.png" },
-  { id: 3, name: "Marcedes_img", img: "/public/img/Brands/Marcedes.png" },
-  { id: 4, name: "Honda_img", img: "/public/img/Brands/Honda.png" },
-  { id: 5, name: "Toyota_img", img: "/public/img/Brands/Toyota.png" },
-  { id: 6, name: "Hyunday_img", img: "/public/img/Brands/Hyundai.png" },
-  { id: 7, name: "Nissan_img", img: "/public/img/Brands/Nissan.png" },
-  { id: 8, name: "KIA_img", img: "/public/img/Brands/KIA.png" },
+  { id: 1, name: "BWM_img", img: "./img/Brands/BMW.png" },
+  { id: 2, name: "lexus-log_img", img: "./img/Brands/lexus-logo.png" },
+  { id: 3, name: "Marcedes_img", img: "./img/Brands/Marcedes.png" },
+  { id: 4, name: "Honda_img", img: "./img/Brands/Honda.png" },
+  { id: 5, name: "Toyota_img", img: "./img/Brands/Toyota.png" },
+  { id: 6, name: "Hyunday_img", img: "./img/Brands/Hyundai.png" },
+  { id: 7, name: "Nissan_img", img: "./img/Brands/Nissan.png" },
+  { id: 8, name: "KIA_img", img: "./img/Brands/KIA.png" },
 ];
 
 const carsBoxArray = [
@@ -57,8 +57,8 @@ const carsBoxArray = [
     price: "$120",
     type: "Automatic",
     location: "Djakarta",
-    img: "/public/img/Popular-car/Lexus CT 200h.png",
-    mobimg: "/public/img/Popular-car/Lexus CT 200h_mob.png",
+    img: "./img/Popular-car/Lexus CT 200h.png",
+    mobimg: "./img/Popular-car/Lexus CT 200h_mob.png",
   },
   {
     id: 2,
@@ -66,8 +66,8 @@ const carsBoxArray = [
     price: "$132",
     type: "Clutch",
     location: "Bali",
-    img: "/public/img/Popular-car/Jaguar_F-Pace.png",
-    mobimg: "/public/img/Popular-car/Jaguar F-Pace_mob.png",
+    img: "./img/Popular-car/Jaguar_F-Pace.png",
+    mobimg: "./img/Popular-car/Jaguar F-Pace_mob.png",
   },
   {
     id: 3,
@@ -75,8 +75,8 @@ const carsBoxArray = [
     price: "$200",
     location: "Bandung",
     type: "Automatic",
-    img: "/public/img/Popular-car/Marcedes Benz.png",
-    mobimg: "/public/img/Popular-car/Marcedes Benz_mob.png",
+    img: "./img/Popular-car/Marcedes Benz.png",
+    mobimg: "./img/Popular-car/Marcedes Benz_mob.png",
   },
 ];
 
@@ -150,19 +150,19 @@ const socialBtnValues = [
 const reviewsArray = [
   {
     id: 1,
-    img: "/public/img/Our-Review/Ellipse 3.png",
+    img: "./img/Our-Review/Ellipse 3.png",
     name: "Melinda Lenny",
     place: "Medan",
   },
   {
     id: 2,
-    img: "/public/img/Our-Review/Ellipse 4.png",
+    img: "./img/Our-Review/Ellipse 4.png",
     name: "Jacob Stevan",
     place: "Bandung",
   },
   {
     id: 3,
-    img: "/public/img/Our-Review/Ellipse 5.png",
+    img: "./img/Our-Review/Ellipse 5.png",
     name: "Roben Musstar",
     place: "Bali",
   },
