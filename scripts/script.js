@@ -66,7 +66,7 @@ const carsBoxArray = [
     price: "$132",
     type: "Clutch",
     location: "Bali",
-    img: "img/Popular-car/Jaguar_F-Pace.png",
+    img: "./img/Popular-car/Jaguar_F-Pace.png",
     mobimg: "./img/Popular-car/Jaguar F-Pace_mob.png",
   },
   {
@@ -273,7 +273,7 @@ carsBoxArray.map((car) => {
   let productItems = `  
   <div class="shadow-sm h-[150px] mx-auto sm:h-full flex sm:block">
               <img
-                class="bg-[#F2F2F2] w-full p-12 hidden sm:block h-[260px]"
+                class="bg-[#F2F2F2] sm:w-full p-12 hidden sm:block h-[260px]"
                 src="${car.img}"
                 alt="${car.name}"
               />
