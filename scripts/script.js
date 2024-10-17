@@ -41,7 +41,7 @@ const dataMap = {
 
 const brandsImg = [
   { id: 1, name: "BWM_img", img: "./img/Brands/BMW.png" },
-  { id: 2, name: "lexus-log_img", img: "./img/Brands/lexus-logo.png" },
+  { id: 2, name: "lexus-log_img", img: "./Rental-Car/img/Brands/lexus-logo.png" },
   { id: 3, name: "Marcedes_img", img: "./img/Brands/Marcedes.png" },
   { id: 4, name: "Honda_img", img: "./img/Brands/Honda.png" },
   { id: 5, name: "Toyota_img", img: "./img/Brands/Toyota.png" },
