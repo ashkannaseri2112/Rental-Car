@@ -898,15 +898,15 @@ img {
 }
 
 .instantRent_bg {
-  background-image: url(/Rental-Car/img/Services/instant_Rent.png);
+  background-image: url(./img/Services/instant_Rent.png);
 }
 
 .privateDriver_bg {
-  background-image: url(/img/Services/privateDriverBg.png);
+  background-image: url(./img/Services/privateDriverBg.png);
 }
 
 .longTrip_bg {
-  background-image: url(/img/Services/longTrip_Bg.png);
+  background-image: url(./img/Services/longTrip_Bg.png);
 }
 
 .socials {
