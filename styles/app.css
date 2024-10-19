@@ -683,11 +683,11 @@ img {
 }
 
 .home-bg {
-  background: url('./img/Map_1.png');
+  background: url(/public/img/Map_1.png);
 }
 
 .home-bg__mobile {
-  background: url('./img/Map_1Mobile.png');
+  background: url('/public/img/Map_1Mobile.PNG');
 }
 
 .nav-visible {
@@ -898,11 +898,11 @@ img {
 }
 
 .instantRent_bg {
-  background-image: url("/public/img/Services/instant_Rent.png");
+  background-image: url("./img/Services/instant_Rent.png");
 }
 
 .privateDriver_bg {
-  background-image: url("./img/Services/privateDriverBg.png");
+  background-image: url('./img/Services/privateDriverBg.png');
 }
 
 .longTrip_bg {
