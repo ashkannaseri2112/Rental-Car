@@ -683,11 +683,11 @@ img {
 }
 
 .home-bg {
-  background: url(/public/img/Map_1.png);
+  background: url('./img/Map_1.png');
 }
 
 .home-bg__mobile {
-  background: url(/public/img/Map_1Mobile.png);
+  background: url('./img/Map_1Mobile.png');
 }
 
 .nav-visible {
