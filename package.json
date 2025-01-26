@@ -1,0 +1,11 @@
+{
+  "name": "pkg",
+  "version": "1.0.0",
+  "description": "This is an example project for store sites in the field of selling cars and brand vehicles",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss build src/input.css -o dist/output.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

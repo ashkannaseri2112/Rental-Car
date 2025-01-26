@@ -5,7 +5,7 @@ let $ = document;
 // const overlay = _id("overlay");
 let btnFeature = $.querySelectorAll("#allBtnFeature button");
 let menuItems = $.querySelectorAll(".menu-item");
-// const contentContainer = _id("contentContainer");
+const contentContainer = _id("contentContainer");
 // const brandsContainer = _id("brandsContainer");
 // const carBoxesGroup = _id("carBoxesGroup");
 // const servicesGroup = _id("servicesContainer");
@@ -453,19 +453,21 @@ footerListItem.forEach((item) => {
   item.addEventListener("mouseenter", (event) => {
     let mainItem = event.target;
     mainItem.classList.add("active");
-    console.log(mainItem)
+    console.log(mainItem);
   });
-    item.addEventListener("mouseleave",()=>{
-      setTimeout(() => {
-        item.classList.remove('active')
-      }, 100);
-    }) 
-
-
+  item.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+      item.classList.remove("active");
+    }, 100);
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   updateContent("instantRent");
+});
+
+$.getElementById("condition").addEventListener("click", (event) => {
+  console.log(event.target);
 });
 
 function _id(element) {
